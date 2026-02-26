@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ThiefMoviment : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class ThiefMoviment : MonoBehaviour
     public static ThiefMoviment Instance { get; private set; }
 
     public float speed = 5.0f; 
+
+    public UnityEvent HitTheTarget;
 
     private void Awake()
     {
@@ -44,6 +47,7 @@ public class ThiefMoviment : MonoBehaviour
 
         if (thiefSpawnPoint.position.x <= targetPosition.position.x)
         {
+            HitTheTarget.Invoke();
             Debug.Log("Thief reached the target position!");
         }
     }
