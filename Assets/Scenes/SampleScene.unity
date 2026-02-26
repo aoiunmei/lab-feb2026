@@ -133,6 +133,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1342295449143564055, guid: 486fa35734a183e4ea9cab615c1be3b3, type: 3}
+      propertyPath: maxZ
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342295449143564055, guid: 486fa35734a183e4ea9cab615c1be3b3, type: 3}
+      propertyPath: minZ
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1342295449143564055, guid: 486fa35734a183e4ea9cab615c1be3b3, type: 3}
       propertyPath: targetPosition
       value: 
       objectReference: {fileID: 1847361384}
@@ -398,6 +406,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4528581459097077864, guid: ed70a4e58bdf8f34a937ad2afe15df28, type: 3}
   m_PrefabInstance: {fileID: 90546024}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &199616956 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1342295449143564055, guid: 486fa35734a183e4ea9cab615c1be3b3, type: 3}
+  m_PrefabInstance: {fileID: 27873856}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f761e3aad64b7e54d9ba5bf21db97ab4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &200667160 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5227552511892308160, guid: c07294c356856dd478c2f68ff3b530b4, type: 3}
@@ -1718,6 +1737,66 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2499586396650988140, guid: 98aa266d26f481d44a58becafbfae6bb, type: 3}
   m_PrefabInstance: {fileID: 1379626835}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &778970049
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 778970051}
+  - component: {fileID: 778970050}
+  m_Layer: 0
+  m_Name: GameStateManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &778970050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778970049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3a527ae39020ce4381685107c3e8a2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onStateChnaged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 199616956}
+        m_TargetAssemblyTypeName: ThiefMoviment, Assembly-CSharp
+        m_MethodName: MoveTowardsTargetAndClamp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  stateChangeInterval: 1
+--- !u!4 &778970051
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 778970049}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &795092074
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4576,3 +4655,4 @@ SceneRoots:
   - {fileID: 1671690802}
   - {fileID: 1847361383}
   - {fileID: 27873856}
+  - {fileID: 778970051}
